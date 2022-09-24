@@ -1,8 +1,11 @@
 const express = require('express')
 const app = express()
 
-app.use("/teste", (req, res) => {
-res.send("Página teste")
+app.get("/list", (req, res) => {
+res.json({
+    name: 'iPad 32Gb',
+    price: 1889.00
+})
 })
 
 app.listen(3000, () => {
