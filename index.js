@@ -12,6 +12,10 @@ res.json({
 })
 })
 
+app.get('/customers/:id', (req, res) => {
+    res.send(`Customer ${req.params.id} selected!`)
+})
+
 app.listen(3000, () => {
     console.log('backend tá executando...')
 })
