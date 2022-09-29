@@ -2,10 +2,16 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const greeting = require('./Middleware')
+const userApi = require('./api/user')
+
 app.use('/mid', greeting)
 
 app.use(bodyParser.text())
 app.use(bodyParser.json())
+
+app.post('/user', userApi.save)
+app.get('/user', userApi.obtain)
+
 app.get("/list", (req, res) => {
 res.json({
     name: 'iPad 32Gb', 
